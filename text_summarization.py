@@ -10,7 +10,7 @@ import ray
 num_cpus = psutil.cpu_count(logical=False)
 ray.init(num_cpus=num_cpus)
 
-reviews = pd.read_csv("/Users/kalikantjha/Downloads/python/NLP/data-sets/amazon-fine-food-reviews/Reviews_sample.csv")
+reviews = pd.read_csv("/python/NLP/data-sets/amazon-fine-food-reviews/Reviews_sample.csv")
 
 reviews = reviews.dropna()
 reviews = reviews.drop(['Id','ProductId','UserId','ProfileName','HelpfulnessNumerator','HelpfulnessDenominator', 'Score','Time'], 1)
@@ -186,7 +186,7 @@ stories = list()
 for i, text in enumerate(clean_texts):
     stories.append({'story': text, 'highlights': clean_summaries[i]})
     # save to file
-    dump(stories, open('/Users/kalikantjha/Downloads/python/NLP/data-sets/amazon-fine-food-reviews/review_dataset.pkl', 'wb'))
+    dump(stories, open('/python/NLP/data-sets/amazon-fine-food-reviews/review_dataset.pkl', 'wb'))
 
 
 batch_size = 64
@@ -195,7 +195,7 @@ latent_dim = 256
 num_samples = 10000
 
 
-stories = load(open('/Users/kalikantjha/Downloads/python/NLP/data-sets/amazon-fine-food-reviews/review_dataset.pkl', 'rb'))
+stories = load(open('/python/NLP/data-sets/amazon-fine-food-reviews/review_dataset.pkl', 'rb'))
 print('Loaded Stories %d' % len(stories))
 print(type(stories))
 
@@ -267,7 +267,7 @@ batch_size=batch_size,
 epochs=epochs,
 validation_split=0.2)
 # Save model
-model.save('/Users/kalikantjha/Downloads/python/NLP/data-sets/amazon-fine-food-reviews/model2.h5')
+model.save('/python/NLP/data-sets/amazon-fine-food-reviews/model2.h5')
 
 
 # generate target given source sequence
