@@ -49,7 +49,7 @@ for name in files:
 # print(data)
 
 # Import Dataset
-# df = pd.read_json('/Users/kalikantjha/PycharmProjects/ACLBOT/venv/us_re/web_data/data_items_huge.json')
+# df = pd.read_json('/ACLBOT/venv/us_re/web_data/data_items_huge.json')
 import json
 
 json_data = []
@@ -164,7 +164,7 @@ vis = pyLDAvis.gensim.prepare(lda_model, corpus, id2word)
 vis
 
 # Download File: http://mallet.cs.umass.edu/dist/mallet-2.0.8.zip
-mallet_path = '/Users/kalikantjha/Downloads/python/NLP/mallet-2.0.8/bin/mallet' # update this path
+mallet_path = '/python/NLP/mallet-2.0.8/bin/mallet' # update this path
 ldamallet = gensim.models.wrappers.LdaMallet(mallet_path, corpus=corpus, num_topics=5, id2word=id2word)
 
 # Show Topics
